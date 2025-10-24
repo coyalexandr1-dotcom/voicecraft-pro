@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VoiceCraft Pro - Профессиональный синтез речи</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>🎙️ VoiceCraft Pro</h1>
+            <p>Профессиональный синтез речи с искусственным интеллектом</p>
+        </header>
+
+        <div class="input-section">
+            <textarea id="textInput" placeholder="Введите ваш текст здесь... (до 100,000 символов)" maxlength="100000"></textarea>
+            <div class="char-count">
+                <span id="charCount">0</span>/100,000 символов
+                <span class="api-counter">Осталось символов: <span id="apiRemaining">10,000</span></span>
+            </div>
+        </div>
+
+        <div class="voice-gallery">
+            <h3>🎭 Выберите голос:</h3>
+            <div class="voice-categories">
+                <button class="category-btn active" data-category="all">Все голоса</button>
+                <button class="category-btn" data-category="male">Мужские</button>
+                <button class="category-btn" data-category="female">Женские</button>
+            </div>
+            
+            <div class="voices-grid" id="voicesGrid">
+                <!-- Голоса загружаются динамически -->
+                <div class="voice-card selected" data-voice-id="21m00Tcm4TlvDq8ikWAM">
+                    <div class="voice-name">Rachel</div>
+                    <div class="voice-description">Приятный женский голос</div>
+                    <div class="voice-tags">
+                        <span class="voice-tag">female</span>
+                        <span class="voice-tag">english</span>
+                    </div>
+                </div>
+                <div class="voice-card" data-voice-id="AZnzlk1XvdvUeBnXmlld">
+                    <div class="voice-name">Domi</div>
+                    <div class="voice-description">Энергичный женский голос</div>
+                    <div class="voice-tags">
+                        <span class="voice-tag">female</span>
+                        <span class="voice-tag">english</span>
+                    </div>
+                </div>
+                <div class="voice-card" data-voice-id="ErXwobaYiN019PkySvjV">
+                    <div class="voice-name">Antoni</div>
+                    <div class="voice-description">Глубокий мужской голос</div>
+                    <div class="voice-tags">
+                        <span class="voice-tag">male</span>
+                        <span class="voice-tag">english</span>
+                    </div>
+                </div>
+                <div class="voice-card" data-voice-id="MF3mGyEYCl7XYWbV9V6O">
+                    <div class="voice-name">Elli</div>
+                    <div class="voice-description">Молодой женский голос</div>
+                    <div class="voice-tags">
+                        <span class="voice-tag">female</span>
+                        <span class="voice-tag">english</span>
+                    </div>
+                </div>
+                <div class="voice-card" data-voice-id="TxGEqnHWrfWFTfGW9XjX">
+                    <div class="voice-name">Josh</div>
+                    <div class="voice-description">Молодой мужской голос</div>
+                    <div class="voice-tags">
+                        <span class="voice-tag">male</span>
+                        <span class="voice-tag">english</span>
+                    </div>
+                </div>
+                <div class="voice-card" data-voice-id="VR6AewLTigWG4xSOukaG">
+                    <div class="voice-name">Arnold</div>
+                    <div class="voice-description">Глубокий мужской голос</div>
+                    <div class="voice-tags">
+                        <span class="voice-tag">male</span>
+                        <span class="voice-tag">english</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="controls">
+            <div class="settings">
+                <div class="setting-group">
+                    <label>Стабильность: <span id="stabilityValue">0.5</span></label>
+                    <input type="range" id="stability" min="0" max="1" step="0.1" value="0.5">
+                </div>
+                <div class="setting-group">
+                    <label>Схожесть: <span id="similarityValue">0.75</span></label>
+                    <input type="range" id="similarity" min="0" max="1" step="0.1" value="0.75">
+                </div>
+            </div>
+            
+            <div class="action-buttons">
+                <button id="generateBtn" class="btn-primary">
+                    🎵 Сгенерировать речь
+                </button>
+                
+                <button id="downloadBtn" class="btn-secondary" disabled>
+                    💾 Скачать MP3
+                </button>
+            </div>
+        </div>
+
+        <div class="player-section hidden" id="playerSection">
+            <h3>Прослушать результат:</h3>
+            <audio id="audioPlayer" controls></audio>
+            <div class="audio-info">
+                <span>Длительность: <span id="duration">0:00</span></span>
+                <span>Качество: 128kbps MP3</span>
+            </div>
+        </div>
+
+        <div class="features">
+            <div class="feature-card">
+                <h4>🎯 100,000+ символов</h4>
+                <p>Обрабатывайте большие тексты и целые книги</p>
+            </div>
+            <div class="feature-card">
+                <h4>🎭 50+ голосов</h4>
+                <p>Профессиональные голоса на разных языках</p>
+            </div>
+            <div class="feature-card">
+                <h4>⚡ Мгновенная генерация</h4>
+                <p>Быстрый синтез даже для больших текстов</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
